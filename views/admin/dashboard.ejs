@@ -1,0 +1,39 @@
+<div class = "admin-title">
+    <h2>Posts</h2>
+    <a href="/add-post" class = "button">
+        + Add New
+    </a>
+</div>
+
+<ul class = "admin-posts">
+
+    <% data.forEach(post => { %>
+      
+     <li>
+        <a href="/post/<%= post._id %>"> <% //links the post_id to post.title %>
+        <%= post.title %> &nearr; <% // nearr stands for north east arrow %>
+        </a>
+
+        <div class="admin-post-controls"> 
+
+            <a href="/edit-post/<%= post._id %>" class="btn">EDIT</a> 
+
+            <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="delete" class="btn">    <% //delete any post by clicking on delete button %>
+            </form>
+
+        </div>
+
+
+    </li>
+
+    <% })  %>
+
+</ul>
+
+<%  if (nextPage !== null) { %>
+    <a href="/dashboard?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+<% } %>
+
+
+<p class = "admin-line-spacing"></p>

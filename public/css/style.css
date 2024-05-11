@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --black: #1c1c1c;   /* Using all font colors */
+    --gray: #7E7E7E;
+    --gray-light: #e4e4e4;
+    --red: #b30000;
+    --font-size-base: 1rem;
+    --font-size-md: clamp(1.5rem, 2vw, 1.75rem);
+    --font-size-lg: clamp(1.75rem, 2.5vw, 2rem);
+    --font-size-xl: clamp(2rem, 3vw, 2.5rem);
+    --border-radius: 10px;
+}
+
+/* Clamp used to set the minimum, maximum and preferred value
+   also md means medium, lg is large and xl is extra large */
+
+body 
+{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--black);
+  font-size: var(--font-size-base);
+  background-color: #fafafa;
+  background-image: url("/img/noise_image.jpg");
+  margin: 0;
+}
+
+/* Derived from google fonts poppins family */
+
+a { color: var(--black); }
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+
+input[type = "text"],
+input[type = "email"],
+input[type = "password"],
+input[type = "search"],
+select,
+textarea{
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-base);
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7 rem 0.75 rem;
+  margin-bottom: 1 rem;
+}
+
+.btn {
+  background-color: var(--black);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 10px 16px;
+  background-color: var(--red);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto; /* push whole page to the middle of page */
+  padding: 0 10px; /* content not touching the sides */
+}
+
+.main {
+  padding: 20px 0;
+}
+
+/* image section */
+
+.serene-image {
+  max-height: 520px;
+  filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25));
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+
+/* header section */
+.header {
+  display: grid;
+  align-items: center; /* Align items vertically */
+  grid-template-columns: 1fr 1fr; /* Adds two columns */
+  grid-template-rows: auto; /* Adds one row */
+  padding-top: 10px;
+  grid-template-areas: 
+    "logo button"
+    "menu menu"
+  ;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr auto; /*adds auto space column, 1 fraction column, auto space column*/
+    grid-template-areas: 
+    "logo menu button";
+  }
+}
+
+.header__logo {
+  grid-area: logo;
+  font-weight: 800;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+
+.header__logo:hover{
+  text-decoration: underline;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  grid-area: menu;
+}
+
+.header__button {
+  display: flex;
+  justify-content: end;
+  grid-area: button;
+}
+
+.header__button button{
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  border-radius: 30px;
+  padding: 6px 12px;
+  background: none;
+  border: 2px solid transparent;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--red);
+}
+
+.header__button button:hover {
+  border: 2px solid var(--black);
+}
+
+/* Header -> Navigation */
+
+.header__nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.header__nav ul a:hover {
+  text-decoration:none;
+}
+
+.header__nav ul a.active {
+  color: var(--gray);
+}
+
+.author {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.author__heading {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 55px;
+}
+
+.author__body {
+  font-size: var(--font-size-md);
+  margin: 5px 0 40px 0;
+  font-weight: normal;
+}
+
+.article__heading {
+  margin-top: 4rem;
+  font-weight: 450;
+}
+
+.article-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.article-list__date {
+  font-size: var(--font-size-base);
+  color: var(--black);
+  width: 260px;
+  display: inline-block;
+}
+
+.article-ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.line_spacing {
+  line-height: 1.5;
+}
+
+.admin-line-spacing {
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .article-ul li a {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .article-list__date {
+    text-align: right;
+  }
+
+  .Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0; /* Adjust padding as needed */
+  }
+}
+
+.article-ul li {
+  font-size: 24px;
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+
+.article-ul li:not(:last-child) {
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.article-ul li:hover{
+  filter: none;
+}
+
+.article-ul:hover li {
+  filter: blur(3px);
+}
+
+.article-ul:hover li:hover {
+  filter: none;
+}
+
+.pagination {
+  font-size: 1.5rem;
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.pagination:hover {
+  color: var(--black);
+}
+
+.article {
+  white-space: pre-wrap;
+}
+
+.footer {
+  margin: 4rem;
+  text-align: center;
+}
+
+/* adding a search bar at the bottom */
+.searchBar {
+  visibility: hidden;
+  transform: translateY(-100px);
+  background-color: var(--black);
+  padding: 4px 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.searchBar.open {
+  transform: translateY(0);
+  transition: transform 0.1s;
+}
+
+.searchBar input {
+  margin: 0;
+  padding: 0;
+}
+
+#searchClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--gray-light);
+  padding: 15px;
+}
+
+/* Dashboard Admin */
+
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-posts {
+  padding: 0;
+  margin: 0;
+}
+
+.admin-post-controls form{
+  display: inline-block;
+  background-color: var(--black);
+  color: var(--gray-light);
+  border: 0;
+  text-decoration: none;
+  font-size: .8rem;
+  padding: 4px 0;
+  line-height: 2;
+}
+
+.admin-posts li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}

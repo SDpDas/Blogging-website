@@ -1,0 +1,30 @@
+<div class = "author">
+    <h1 class="author__heading"> Hi, I'm Sagardeep </h1>
+    <h3 class="author__body">Welcome to my Blog Page 😊</h3>
+</div>
+
+<img src="/img/great-and-serene.webp" alt="mythical pic" class="serene-image" width="981" height="528">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+
+    <ul class="article-ul">
+        <% for(let Post of data) { %>
+        <li>
+            <a href="/post/<%= Post._id %>">
+                <span><%= Post.title %></span>
+                <span class = "article-list__date"><%= Post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+
+    <%  if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+    
+    
+    <p class = "line-spacing"></p>
+
+</section>
+
