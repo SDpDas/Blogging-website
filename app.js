@@ -28,7 +28,7 @@ app.locals.isActiveRoute = isActiveRoute;
 
 app.use(session(
     {
-        secret: 'keyboard cat',
+        secret: process.env.JWT_SECRET,
         resave: false,
         saveUninitialized: true,
         store: MongoStore.create({
