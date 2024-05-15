@@ -26,6 +26,7 @@ Lots of routing methods were used by JavaScript hence only clickable features in
 8. Go to `views/admin/index.ejs` and uncomment the form tag that loads registration element of admin page
 9. After registration reload the `localhost:8950/admin` page and enter login details.
 
+## FINAL LINK: https://inkwell-avenue-weblog.onrender.com
 ---
 
 Created by **Sagardeep Das** with ❤️‍🔥
