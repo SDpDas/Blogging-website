@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser'); //Helps us to grab, save cookies 
 const connectDB = require('./server/config/db');
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
-const mongoose = require('mongoose');
 
 const {isActiveRoute} = require('./server/helpers/routeHelpers');
 
@@ -15,7 +14,6 @@ const {isActiveRoute} = require('./server/helpers/routeHelpers');
 const app = express();
 const PORT = process.env.PORT || 8950; 
 
-mongoose.connect(process.env.MONGODB_URI);
 //Connect to DB
 connectDB();
 
