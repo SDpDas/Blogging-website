@@ -22,6 +22,8 @@ module.exports = function(app) {
             .limit(perPage)
             .exec();
 
+            console.log('Fetched data:', data);
+            
             const count = await Post.countDocuments();
             const nextPage = parseInt(page) + 1;
             const hasNextPage = nextPage <= Math.ceil(count / perPage);
