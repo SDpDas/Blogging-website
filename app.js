@@ -15,11 +15,7 @@ const {isActiveRoute} = require('./server/helpers/routeHelpers');
 const app = express();
 const PORT = process.env.PORT || 8950; 
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
-
+mongoose.connect(process.env.MONGODB_URI);
 //Connect to DB
 connectDB();
 
