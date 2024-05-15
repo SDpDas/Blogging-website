@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser'); //Helps us to grab, save cookies 
 const connectDB = require('./server/config/db');
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
-
 const {isActiveRoute} = require('./server/helpers/routeHelpers');
 
 
