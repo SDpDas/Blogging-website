@@ -9,13 +9,17 @@
     <h2 class="articles__heading">Latest Posts</h2>
 
     <ul class="article-ul">
-        <% for(let Post of data) { %>
-        <li>
-            <a href="/post/<%= Post._id %>">
-                <span><%= Post.title %></span>
-                <span class = "article-list__date"><%= Post.createdAt.toDateString() %></span>
-            </a>
-        </li>
+        <% if (data && data.length > 0) { %>
+            <% for(let Post of data) { %>
+                <li>
+                    <a href="/post/<%= Post._id %>">
+                        <span><%= Post.title %></span>
+                        <span class="article-list__date"><%= Post.createdAt.toDateString() %></span>
+                    </a>
+                </li>
+            <% } %>
+        <% } else { %>
+            <li>No posts available.</li>
         <% } %>
     </ul>
 
