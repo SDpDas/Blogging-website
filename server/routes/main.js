@@ -107,7 +107,10 @@ module.exports = function(app) {
 
     });
 
-    // rendering the about page
+    /**
+     *  GET /
+     *  about page
+     */
 
     router.get('/about', (req, res) => {
         const locals = {
@@ -118,7 +121,10 @@ module.exports = function(app) {
         res.render('about', {locals});
     });
 
-    // rendering the contact page
+    /**
+     *  GET /
+     *  contact page
+     */
 
     router.get('/contact', (req, res) => {
         const locals = {

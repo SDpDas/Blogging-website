@@ -48,9 +48,9 @@ app.use(expressLayouts);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
-const mainRoutes = require('./server/routes/main')(app); // Passing app to main.js
+const mainRoutes = require('./server/routes/main')(app); // Passing requests in main.js and sending back to app.js
 app.use('/', mainRoutes);
-app.use('/', require('./server/routes/admin')); // does the same as 26 and 27 except we are routing to admin.js
+app.use('/', require('./server/routes/admin')); // Does the same except we are routing to admin.js
 
 app.listen(PORT, () => {        
     console.log(`App listening to port ${PORT}`);

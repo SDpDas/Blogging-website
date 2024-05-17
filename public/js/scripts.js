@@ -16,11 +16,10 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-        searchClose.addEventListener('click', function() {
-        searchBar.style.visibility = 'hidden'; //hides the searchbar
-        searchBar.classList.remove('open'); //doesn't access searchbar open subclass anymore
-        this.setAttribute('aria-expanded', 'false'); //reversing changes to event for searchBtn from header.ejs
-        });
-
+    searchClose.addEventListener('click', function() {
+    searchBar.style.visibility = 'hidden'; //hides the searchbar
+    searchBar.classList.remove('open'); //doesn't access searchbar open subclass anymore
+    this.setAttribute('aria-expanded', 'false'); //reversing changes to event for searchBtn from header.ejs
+    });
 
 });
